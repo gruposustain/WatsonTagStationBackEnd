@@ -1,0 +1,24 @@
+{
+  "name": "watsontagstationbackend",
+  "version": "1.0.0",
+  "description": "projeto para verificar os metadados de fotos e treinar o watson",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/gruposustain/watsonTagStationBackEnd.git"
+  },
+  "author": "Sara Souza",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/gruposustain/watsonTagStationBackEnd/issues"
+  },
+  "homepage": "https://github.com/gruposustain/watsonTagStationBackEnd#readme",
+  "dependencies": {
+    "express": "^4.15.2",
+    "fs": "0.0.1-security",
+    "watson-developer-cloud": "^2.27.0"
+  }
+}
