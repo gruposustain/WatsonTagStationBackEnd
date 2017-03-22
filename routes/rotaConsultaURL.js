@@ -1,7 +1,6 @@
 module.exports = function(app){
-    app.get('/consultaWatson', function(req, res){
+    app.get('/consultaWatsonURL', function(req, res){
         var watson = require('watson-developer-cloud');
-        var fs = require('fs');
 
         var visual_recognition = watson.visual_recognition({
         api_key: '3ffaccfd128ddffb1933738f93021fdf543d7517',
@@ -9,20 +8,17 @@ module.exports = function(app){
         version_date: '2016-05-20'
         });
 
+        var url = req.param('url');
+
         var params = {
-        images_file: fs.createReadStream('./images/car.png')
-        };
+            url: url
+        }
 
         visual_recognition.classify(params, function(err, result) {
         if (err)
-            console.log(err);
+            res.send(err);
         else
-            //console.log(JSON.stringify(res, null, 2));
             res.send(result);
         });
-
-        //res.send('<html><body><h1>Rota de Consulta ao serviço watson</h1></body></html>')
-       //res.send('<html><body><h1>retorno do watson</h1><br /><p>' + a + '</p></body></html>');
     });
-
 }

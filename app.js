@@ -1,6 +1,6 @@
 var app = require('./config');
 
-var rotaConsulta = require('./routes/rotaConsulta')(app);
+var rotaConsulta = require('./routes/rotaConsultaURL')(app);
 var rotaInicial = require('./routes/rotaInicial')(app);
 
 app.listen(3000, function(){
